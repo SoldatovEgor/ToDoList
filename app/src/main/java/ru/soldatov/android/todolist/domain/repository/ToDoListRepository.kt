@@ -7,11 +7,11 @@ interface ToDoListRepository {
 
     fun addToDoItem(toDoItem: ToDoItem)
 
-    fun deleteToDoItem(toDoItem: ToDoItem)
+    fun deleteToDoItem(toDoItemId: Int)
 
     fun editToDoItem(toDoItem: ToDoItem)
 
-    fun getToDoItem(toDoItemId: String): ToDoItem
+    fun getToDoItem(toDoItemId: Int): ToDoItem
 
     fun getToDoList(): LiveData<List<ToDoItem>>
 }
