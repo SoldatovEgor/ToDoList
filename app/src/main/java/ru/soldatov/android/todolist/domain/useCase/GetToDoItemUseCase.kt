@@ -7,7 +7,7 @@ class GetToDoItemUseCase @Inject constructor(
     private val repository: ToDoListRepository
 ) {
 
-    operator fun invoke(toDoItemId: String) {
+    suspend operator fun invoke(toDoItemId: Int) {
         repository.getToDoItem(toDoItemId)
     }
 }

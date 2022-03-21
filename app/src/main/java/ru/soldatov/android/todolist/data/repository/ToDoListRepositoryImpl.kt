@@ -13,19 +13,19 @@ class ToDoListRepositoryImpl @Inject constructor(
     private val mapper: ToDoMapper
 ) : ToDoListRepository {
 
-    override fun addToDoItem(toDoItem: ToDoItem) {
+    override suspend fun addToDoItem(toDoItem: ToDoItem) {
         toDoDao.addToDoItem(mapper.mapEntityToDbModel(toDoItem))
     }
 
-    override fun deleteToDoItem(toDoItemId: Int) {
+    override suspend fun deleteToDoItem(toDoItemId: Int) {
         toDoDao.deleteToDoItem(toDoItemId)
     }
 
-    override fun editToDoItem(toDoItem: ToDoItem) {
+    override suspend fun editToDoItem(toDoItem: ToDoItem) {
         toDoDao.addToDoItem(mapper.mapEntityToDbModel(toDoItem))
     }
 
-    override fun getToDoItem(toDoItemId: Int): ToDoItem {
+    override suspend fun getToDoItem(toDoItemId: Int): ToDoItem {
         val dbModel = toDoDao.getToDoItem(toDoItemId)
         return mapper.mapDbModelToEntity(dbModel)
     }

@@ -8,7 +8,7 @@ class AddToDoItemUseCase @Inject constructor(
     private val repository: ToDoListRepository
 ) {
 
-    operator fun invoke(toDoItem: ToDoItem) {
+    suspend operator fun invoke(toDoItem: ToDoItem) {
         repository.addToDoItem(toDoItem)
     }
 }
