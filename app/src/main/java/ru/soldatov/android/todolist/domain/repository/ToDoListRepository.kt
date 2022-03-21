@@ -1,6 +1,7 @@
-package ru.soldatov.android.todolist.domain
+package ru.soldatov.android.todolist.domain.repository
 
 import androidx.lifecycle.LiveData
+import ru.soldatov.android.todolist.domain.ToDoItem
 
 interface ToDoListRepository {
 

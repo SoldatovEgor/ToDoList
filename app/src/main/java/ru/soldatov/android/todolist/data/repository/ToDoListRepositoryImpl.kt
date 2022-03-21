@@ -2,7 +2,7 @@ package ru.soldatov.android.todolist.data.repository
 
 import androidx.lifecycle.LiveData
 import ru.soldatov.android.todolist.domain.ToDoItem
-import ru.soldatov.android.todolist.domain.ToDoListRepository
+import ru.soldatov.android.todolist.domain.repository.ToDoListRepository
 
 class ToDoListRepositoryImpl() : ToDoListRepository {
 
