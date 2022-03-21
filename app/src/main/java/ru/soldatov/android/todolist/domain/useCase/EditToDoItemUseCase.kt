@@ -1,5 +1,7 @@
-package ru.soldatov.android.todolist.domain
+package ru.soldatov.android.todolist.domain.useCase
 
+import ru.soldatov.android.todolist.domain.ToDoItem
+import ru.soldatov.android.todolist.domain.repository.ToDoListRepository
 import javax.inject.Inject
 
 class EditToDoItemUseCase @Inject constructor(
