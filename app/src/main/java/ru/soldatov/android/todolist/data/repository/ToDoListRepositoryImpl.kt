@@ -17,8 +17,8 @@ class ToDoListRepositoryImpl @Inject constructor(
         toDoDao.addToDoItem(mapper.mapEntityToDbModel(toDoItem))
     }
 
-    override suspend fun deleteToDoItem(toDoItemId: Int) {
-        toDoDao.deleteToDoItem(toDoItemId)
+    override suspend fun deleteToDoItem(toDoItem: ToDoItem) {
+        toDoDao.deleteToDoItem(toDoItem.id)
     }
 
     override suspend fun editToDoItem(toDoItem: ToDoItem) {

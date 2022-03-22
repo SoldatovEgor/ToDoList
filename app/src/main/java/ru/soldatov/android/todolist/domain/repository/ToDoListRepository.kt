@@ -7,7 +7,7 @@ interface ToDoListRepository {
 
     suspend fun addToDoItem(toDoItem: ToDoItem)
 
-    suspend fun deleteToDoItem(toDoItemId: Int)
+    suspend fun deleteToDoItem(toDoItem: ToDoItem)
 
     suspend fun editToDoItem(toDoItem: ToDoItem)
 
