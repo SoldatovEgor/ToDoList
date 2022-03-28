@@ -3,17 +3,18 @@ package ru.soldatov.android.todolist.di
 import android.app.Application
 import dagger.BindsInstance
 import dagger.Component
-import ru.soldatov.android.todolist.presentation.MainActivity
+import ru.soldatov.android.todolist.presentation.ToDoListFragment
 
 @ApplicationScope
 @Component(
     modules = [
-        DataModule::class
+        DataModule::class,
+        ViewModelModule::class
     ]
 )
 interface ApplicationComponent {
 
-    fun inject(activity: MainActivity)
+    fun inject(fragment: ToDoListFragment)
 
     @Component.Factory
     interface Factory {
