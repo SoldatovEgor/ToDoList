@@ -3,6 +3,7 @@ package ru.soldatov.android.todolist.di
 import android.app.Application
 import dagger.BindsInstance
 import dagger.Component
+import ru.soldatov.android.todolist.presentation.ToDoDetailFragment
 import ru.soldatov.android.todolist.presentation.ToDoListFragment
 
 @ApplicationScope
@@ -15,6 +16,8 @@ import ru.soldatov.android.todolist.presentation.ToDoListFragment
 interface ApplicationComponent {
 
     fun inject(fragment: ToDoListFragment)
+
+    fun inject(fragment: ToDoDetailFragment)
 
     @Component.Factory
     interface Factory {

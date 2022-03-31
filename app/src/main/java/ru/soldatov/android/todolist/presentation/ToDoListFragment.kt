@@ -53,6 +53,10 @@ class ToDoListFragment : Fragment() {
             adapter.submitList(it)
         }
         binding.taskLayout.text = getString(R.string.all_to_dos)
+        binding.flabAddTask.setOnClickListener {
+            val intent = ToDoItemDetailActivity.newIntentAdd(requireContext())
+            startActivity(intent)
+        }
     }
 
     private fun setupRecyclerView() {
@@ -65,10 +69,6 @@ class ToDoListFragment : Fragment() {
         adapter.toDoItemClickListener = {
             Toast.makeText(requireContext(), "${it.taskName}", Toast.LENGTH_SHORT).show()
         }
-    }
-
-    private fun launchFragment() {
-
     }
 
     override fun onDestroy() {
