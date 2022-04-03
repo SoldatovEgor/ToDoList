@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.CheckBox
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
@@ -63,12 +64,19 @@ class ToDoListFragment : Fragment() {
         adapter = ToDoItemAdapter()
         binding.rvItemList.adapter = adapter
         setupClickItemListener()
+        setupClickCheckBox()
     }
 
     private fun setupClickItemListener() {
         adapter.toDoItemClickListener = {
             val intent = ToDoItemDetailActivity.newIntentEdit(requireContext(), it.id)
             startActivity(intent)
+        }
+    }
+
+    private fun setupClickCheckBox() {
+        adapter.toDoItemClickListenerDone = {
+            viewModel.changeIsDone(it)
         }
     }
 
