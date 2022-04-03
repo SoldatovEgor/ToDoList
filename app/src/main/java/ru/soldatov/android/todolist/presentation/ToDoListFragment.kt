@@ -67,7 +67,8 @@ class ToDoListFragment : Fragment() {
 
     private fun setupClickItemListener() {
         adapter.toDoItemClickListener = {
-            Toast.makeText(requireContext(), "${it.taskName}", Toast.LENGTH_SHORT).show()
+            val intent = ToDoItemDetailActivity.newIntentEdit(requireContext(), it.id)
+            startActivity(intent)
         }
     }
 
