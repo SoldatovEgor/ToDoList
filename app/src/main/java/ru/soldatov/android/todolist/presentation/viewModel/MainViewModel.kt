@@ -20,7 +20,8 @@ class MainViewModel @Inject constructor(
 
     fun deleteToDoItem(toDoItem: ToDoItem) {
         viewModelScope.launch {
-            deleteToDoItemUseCase(toDoItem)
+            if (toDoItem.isDone)
+                deleteToDoItemUseCase(toDoItem)
         }
     }
 

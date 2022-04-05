@@ -2,9 +2,7 @@ package ru.soldatov.android.todolist.presentation
 
 import android.content.Context
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import android.widget.CheckBox
 import android.widget.Toast
 import androidx.fragment.app.Fragment
@@ -37,6 +35,11 @@ class ToDoListFragment : Fragment() {
         super.onAttach(context)
     }
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setHasOptionsMenu(true)
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -58,6 +61,11 @@ class ToDoListFragment : Fragment() {
             val intent = ToDoItemDetailActivity.newIntentAdd(requireContext())
             startActivity(intent)
         }
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        super.onCreateOptionsMenu(menu, inflater)
+        inflater.inflate(R.menu.menu, menu)
     }
 
     private fun setupRecyclerView() {

@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import ru.soldatov.android.todolist.R
 import ru.soldatov.android.todolist.databinding.ItemTaskFragmentBinding
 import ru.soldatov.android.todolist.domain.ToDoItem
 import ru.soldatov.android.todolist.presentation.viewModel.ToDoItemViewModel
@@ -38,6 +39,11 @@ class ToDoDetailFragment : Fragment() {
         super.onAttach(context)
         if (context is OnEditingFinished)
             onFinished = context
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setHasOptionsMenu(true)
     }
 
     override fun onCreateView(

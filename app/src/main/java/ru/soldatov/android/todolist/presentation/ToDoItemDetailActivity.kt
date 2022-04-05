@@ -17,6 +17,7 @@ class ToDoItemDetailActivity : AppCompatActivity(), ToDoDetailFragment.OnEditing
         setContentView(R.layout.activity_detail_task)
         parseIntent()
         launchFragmentDetail()
+        setupToolbar()
     }
 
     private fun parseIntent() {
@@ -35,14 +36,26 @@ class ToDoItemDetailActivity : AppCompatActivity(), ToDoDetailFragment.OnEditing
 
     private fun launchFragmentDetail() {
         val fragment = when(screenMode) {
-            MODE_ADD -> ToDoDetailFragment.newInstanceAdd()
-            MODE_EDIT -> ToDoDetailFragment.newInstanceEdit(taskItemId)
+            MODE_ADD -> {
+                ToDoDetailFragment.newInstanceAdd()
+            }
+            MODE_EDIT -> {
+                ToDoDetailFragment.newInstanceEdit(taskItemId)
+            }
             else -> throw RuntimeException("Not find mode: $screenMode")
         }
         supportFragmentManager
             .beginTransaction()
             .replace(R.id.fragment_container, fragment)
             .commit()
+    }
+
+    private fun setupToolbar() {
+        setSupportActionBar(findViewById(R.id.detail_toolbar))
+        when(screenMode) {
+            MODE_ADD -> supportActionBar?.setTitle(R.string.add_new_to_do)
+            MODE_EDIT -> supportActionBar?.setTitle(R.string.edit_to_do)
+        }
     }
 
     companion object {

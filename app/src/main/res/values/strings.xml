@@ -3,4 +3,8 @@
     <string name="task_title_hint">Title</string>
     <string name="task_description">Enter your TO-DO here</string>
     <string name="all_to_dos">All TO-DOs</string>
+    <string name="add_new_to_do">Add new TO-DO</string>
+    <string name="edit_to_do">Edit TO-DO</string>
+    <string name="action_filter">filter</string>
+    <string name="action_clear">Clear task</string>
 </resources>
