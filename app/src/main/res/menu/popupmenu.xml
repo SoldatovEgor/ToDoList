@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:id="@+id/menu_filter">
+
+        <item
+            android:id="@+id/filter_all_task"
+            android:title="@string/filter_all_task"
+            />
+
+        <item
+            android:id="@+id/filter_complete_task"
+            android:title="@string/filter_complete_task"
+            />
+
+        <item
+            android:id="@+id/filter_action_task"
+            android:title="@string/filter_action_task"
+            />
+
+    </group>
+
+</menu>

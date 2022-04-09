@@ -2,6 +2,7 @@ package ru.soldatov.android.todolist.presentation.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.core.view.isVisible
 import androidx.recyclerview.widget.ListAdapter
 import androidx.viewbinding.ViewBinding
 import ru.soldatov.android.todolist.databinding.ItemTaskActiveBinding
